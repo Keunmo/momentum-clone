@@ -24,17 +24,26 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 const link = document.querySelector("a");
+const greeting = document.querySelector("#greeting");
+
+const HIDDEN_CLASSNAME = "hidden";
 
 function onLoginSubmit(event) { // 모든 EventListener의 첫번째 arg는 항상 event에 대한 infomation들이다.
   event.preventDefault(); // 브라우저의 기본 행동이 발생되지 않도록 막음. 원래 form은 자동으로 submit하는데 그걸 막는다던지.
-  console.log(event);
+  // console.log(event);
   const username = loginInput.value;
-  console.log(username);
+  localStorage.setItem("username", username);
+  // console.log(username);
+  // greeting.innerText = "Hello " + username;
+  greeting.innerText = `Hello ${username}`; // same as upper line.
+  loginForm.classList.add(HIDDEN_CLASSNAME);
+  greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
 function handleLinkClick(event){
-  console.log(event);
-  alert("clicked!");
+  event.preventDefault();
+  console.dir(event);
+  // alert("clicked!");
 }
 // loginButton.addEventListener("click", onLoginBtnClick);
 loginForm.addEventListener("submit", onLoginSubmit);
