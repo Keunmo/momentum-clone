@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <script src="//cdn.jsdelivr.net/npm/eruda"></script>
     <script>eruda.init()</script> -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Momentum-Clone</title>
   </head>
   <body>
+    <h2 id="clock">00:00</h2>
     <form id="login-form" class="hidden">
       <input
         required
@@ -19,10 +20,28 @@
         placeholder="What is your name?"
       />
       <!-- <button>Log In</button> -->
-      <input type="submit" value="Log In">
+      <input type="submit" value="Log In" />
       <!-- line 22 is same as line 21 -->
     </form>
-    <h1 id="greeting" class="hidden"></h1>
-    <script src="app.js"></script>
+    <h1 class="hidden" id="greeting"></h1>
+    <form id="todo-form">
+      <input type="text" placeholder="Write a To Do and Press Enter" required />
+    </form>
+    <ul id="todo-list"></ul>
+    <div id="quote">
+      <span></span> <!--for quote-->
+      <span></span> <!--for author-->
+    </div>
+    <div id="weather">
+      <span></span> <!--for loc name-->
+      <span></span> <!--for weather-->
+    </div>
+    <script src="js/greetings.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="secret.js"></script>
   </body>
 </html>
